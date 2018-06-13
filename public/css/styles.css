@@ -1,0 +1,394 @@
+/* ADMIN ZONE*/
+.adminZone
+{
+	position: absolute;
+	z-index: 11;
+	display: flex;
+	flex-direction: row;					
+	top: 0px;
+	background-color: #b3d1ff;
+	color: blac; 
+	box-shadow: 0px 9px 10px 5px rgba(0,0,0,0.60);
+}
+.buttonAdminZone img
+{
+	width: 40px; 
+	height: 40px; 
+}
+.administrationArticles
+{
+	background-color: white;
+	max-height: 550px; 
+	margin-top: 30px;
+	overflow-y: scroll;
+	padding: 1%; 
+	box-shadow: inset -3px 8px 26px 7px rgba(0,0,0,0.67);
+}
+/*presentation des articles dans l'ADMIN*/
+.adminArticles
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;	
+	border: solid gree;
+	background-color: #b3d1ff;
+	margin-bottom: 5px;
+	/*width: 100%;*/
+	box-shadow: 0px 12px 7px 4px rgba(0,0,0,0.71);
+}
+.adminArticles div, em, h4, p
+{
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+.adminArticles .contentDate, .adminComments .contentDate
+{
+	margin: 0px;
+	padding: 1%;
+	width: 20%;
+	height: 100;
+}
+.adminArticles .contentData, .adminComments .contentData
+{
+	margin: 0px;
+	padding: 1%;
+	width: 50%;
+	text-align: justify;
+	background-color: white;
+}
+.adminArticles .contentAction, .adminComments .contentAction
+{
+	margin: 0px;
+	padding: 1%;
+	width: 23%;
+	height: 100%;
+	text-align: right;
+}
+.administrationComments
+{
+	background-color: white;
+	margin-bottom: 30px;
+	max-height: 550px; 
+	overflow-y: scroll;
+	padding: 1%; 
+	box-shadow: inset -3px 8px 26px 7px rgba(0,0,0,0.67);
+}
+.adminComments
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	background-color: #b3d1ff;
+	margin-bottom: 5px;
+	width: 100%;
+	box-shadow: 0px 12px 26px 0px rgba(0,0,0,0.67);
+}
+.adminComments h4, em
+{
+	display: inline-block;
+}
+.adminComments div
+{
+	margin: 0px;
+	display: inline-block;
+}
+.redFlag
+{
+ background-color: yellow;
+}
+
+/* AFFICHAGE POSTS pAGE PRINCIPALE */
+header
+{
+	margin: 0px;
+}
+nav 
+{
+	height: 100px;
+}
+.navbar-brand img
+{
+	width: 35px;
+	height: 35px;
+}
+.post-preview
+{
+	margin: 0px;
+}
+.site-heading h1 a 
+{
+	color: white;
+}
+
+body a:link
+{
+	text-decoration: none;
+}
+.news p
+{
+	margin-top:0px;
+	padding: 2%; 
+	width: 100%;
+	margin: 0px;
+	color: black;
+}
+.newsPost p
+{
+	font-size: 22px;
+	color: black;
+	font-family: Lora, 'Times New Roman', 'Serif';
+}
+.readMore a
+{
+	color: red;
+	
+}
+.news h2
+{
+	font-size: 42px;
+}
+.news p
+{
+	font-family: Helvetica, Serif;
+}
+.news h2, .newsDate
+{
+	width:100%;
+	color: black;
+	margin: auto;
+	position: relative;
+	margin: 0px;
+	text-align: center;				
+}	
+.newsDate
+{
+	font-size:0.7em;
+}		
+/* DISPLAY IMAGES */ 
+.imageClass
+{
+	margin: 0px;
+	width: 100%; 
+	height: 100%; 
+}
+.news img
+{
+	max-height: 30%;
+}	
+/* FOOTER */
+.footer
+{
+	margin: 0px;
+	height: 145px;
+	background-color: #b3d1ff;
+}												
+/* FORM COMMENT */
+.formComment
+{
+	background-color: rgba(179, 209, 255, 0.3);
+	padding: 1%;
+}
+.formComment label
+{
+	font-size: 18px;
+	font-style: italic;
+}		
+.formComment input[type='text'], textarea
+{
+	width: 30%; 
+}		
+.formComment textarea
+{
+	width: 50%; 
+}		
+.commentDiv
+{
+	padding: 1%;
+	background-color: rgba(179, 209, 255, 0.3);
+	margin-bottom: 15px;
+}
+.commentComment
+{
+	background-color: white;
+	width: 100%;
+}
+/* BUTTON like du blog */
+.pngImages
+{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	display: inline-block;	
+	background-color:#fff;
+	transition:.1s ease-out;
+	box-shadow: 6px 8px 10px 0px rgba(0, 0, 0, 0.6);
+	border-radius: 33px;
+}
+.buttonLikeDiv
+{
+	position: relative;
+	border: solid 1px black; 
+	width: 55px; 
+	height: 20px;
+	border-radius: 5px;
+	margin-right: 0px;
+	margin-left: 15px;
+	display: inline-block;
+	font-size: 14px;
+	padding-right: 3px;
+	padding-top: 1px;
+	padding-bottom: 2px;
+	text-align: right;
+	border: solid re;
+}
+
+.pngImages:hover
+{
+    animation: pulse 1s ease 0s infinite normal;
+}
+@keyframes pulse 
+{
+    0% {
+      transform: scale(1) rotate(0deg); 
+    }
+    50% {
+      /*transform: scale(1.1) rotate(-5deg);*/ 
+      transform: scale(1.3) rotate(-5deg); 
+    }
+    100% {
+      transform: scale(1) rotate(0deg); 
+    }
+}
+/*----------------- FORM d'inscription & connexion ---------------*/	
+							
+#form
+{
+	margin-left: auto; 	
+	margin-right: auto;
+	z-index: 0; 
+	padding: 25px 25px 25px 25px;
+	height: 450px; 
+	background-color: #cce0ff;
+	border: solid re; 
+	margin-top: 15px; 
+	margin-bottom: 55px;
+	box-shadow: 6px 8px 10px 0px rgba(0, 0, 0, 0.6);
+}
+#form a
+{
+	color: red;
+}		
+/* LG */
+@media(min-width: 1200px)
+{
+	#form
+	{
+		width: 30%;
+	}
+	#form input
+	{
+		width: 80%;
+	}	
+}
+/* MD */
+@media(min-width: 992px) and (max-width: 1199px)
+{
+	#form
+	{
+		width: 30%;
+	}	
+	#form input 
+	{
+		width: 80%;
+		margin: 0px;
+	}
+}
+/* SM */
+@media(min-width: 768px) and (max-width: 991px)
+{
+	#form
+	{
+		width: 40%;
+	}	
+	#form input 
+	{
+		width: 80%;
+		margin: 0px;
+	}
+}
+/* XS */
+@media(min-width: 451px) and (max-width: 767px) 
+{
+	#form
+	{
+		width: 70%;
+	}	
+		#form input 
+	{
+		width: 80%;
+		margin: 0px;
+	}
+}
+/* XXS */
+@media(max-width: 450px) 
+{
+	#form
+	{
+		width: 100%;
+	}	
+		#form input 
+	{
+		width: 82%;
+		margin: 0px;
+	}
+}
+#form img
+{
+	margin-top: -5px;
+	width: 25px;
+	height: 25px;
+	margin-left: 10px; 
+}		
+#form input 
+{
+	border-radius: 5px;
+	display: inline-block; 
+}
+ #form input[type='submit']
+{
+	width: 70%;
+}
+#div-checked-pseudo
+{
+	display: inline-block; 	
+}
+#pseudo-checked
+{
+	visibility: hidden; 
+}
+#mdp-checked
+{
+	visibility: hidden;  		
+}
+#confirmation-checked
+{
+	visibility: hidden;  		
+}
+#mail-checked
+{
+	visibility: hidden; 		
+}
+#confirmation-text
+{
+	font-size: 13px;
+	margin: 0px; 
+}
+#confirmation2-text
+{
+	font-size: 13px;
+	margin: 0px; 
+}
