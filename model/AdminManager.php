@@ -1,7 +1,6 @@
 <?php
-require_once('ConnectDbase.php');
 
-class AdminManager extends ConnectDbase
+class AdminManager extends Manager
 {		
 	public function addCategory($categoryName)
 	{

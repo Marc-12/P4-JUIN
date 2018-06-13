@@ -1,7 +1,6 @@
 <?php
-require_once('ConnectDbase.php');
 
-class PostManager extends ConnectDbase
+class PostManager extends Manager
 {
 	public function addPost($image_url,$title,$content,$category)
 	{

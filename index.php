@@ -9,8 +9,6 @@ if (isset($_GET['action']))
 	$route = $arrayParameters['action'];
 	$router = initRouteur();
 	$myClass = ($router["".$route.""]["controler"]);			
-			
-	// array_push($arrayParameters, $myClass2);	
 	// unset($arrayParameters['action']);
 	try 
 	{
@@ -21,6 +19,7 @@ if (isset($_GET['action']))
 	catch (Exception $e) 
 	{
 		//traiter exception
+		echo $e->getMessage ();
 	}
 }
 else

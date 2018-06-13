@@ -1,5 +1,5 @@
 <?php
-require_once('model/InscriptionManager.php');
+// require_once('model/InscriptionManager.php');
 
 class InscriptionControler 
 {

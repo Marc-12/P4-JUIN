@@ -1,7 +1,6 @@
 <?php
-require_once('ConnectDbase.php');
 
-class ConnexionManager extends ConnectDbase
+class ConnexionManager extends Manager
 {	
 	public function connect()
 	{

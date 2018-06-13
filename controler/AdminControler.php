@@ -1,19 +1,19 @@
 <?php
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
-require_once('model/AdminManager.php');
+// require_once('model/PostManager.php');
+// require_once('model/CommentManager.php');
+// require_once('model/AdminManager.php');
 
 class AdminControler 
 {
 	
 	private $_urlImage =  "";					
 
-		 
 	public function __construct ()
 	{
 		if(!isset($_SESSION['user']) == "admin")	
 		{
-			header('Location: index.php');	
+			// header('Location: index.php');	
+			throw new Exception ('accès interdit');
 		}
 	}
 	public function admin ()
@@ -23,7 +23,6 @@ class AdminControler
 		$posts = $postManager->getPosts(); 
 		$allComments = $commentManager->getAllComments();
 		require('view/frontend/admin.php');
-		// header('Location: view/frontend/admin.php');	
 	}
 	public function adminDeletePost ($arrayParameters)
 	{
@@ -51,9 +50,9 @@ class AdminControler
 		$commentManager->eraseComment($arrayParameters['id']);						
 		$this->admin();
 	}
-	private function photoSql ($string)
+	private function photoSql ($chemin)
 	{
-		$imageExtension = str_replace('image/','.',$string); 
+		$imageExtension = str_replace('image/','.',$chemin); 
 		$uniqId = md5(uniqid(rand(), true));
 		$image_url = 'public/images/posts/'.$uniqId.$imageExtension;
 		$this->_urlImage = $image_url;
@@ -71,8 +70,8 @@ class AdminControler
 	{
 		if(!empty($_FILES['image']['type']))
 		{
-			$string = $_FILES['image']['type'];
-			$this->photoSql ($string);
+			$chemin = $_FILES['image']['type'];
+			$this->photoSql ($chemin);
 			$postManager = new PostManager();
 			$posts = $postManager->addPost($this->_urlImage,$arrayParameters['title'],$arrayParameters['content'],$arrayParameters['categories']); 
 			$this->admin();
@@ -89,8 +88,8 @@ class AdminControler
 	{													
 		if(!empty($_FILES['image']['type']))
 		{
-			$string = $_FILES['image']['type'];
-			$this->photoSql ($string);			
+			$chemin = $_FILES['image']['type'];
+			$this->photoSql ($chemin);			
 			$postManager = new PostManager(); 
 			$UpdatedPost = $postManager->updatePost($arrayParameters['title'], $arrayParameters['content'], $arrayParameters['categories'], $this->_urlImage, $arrayParameters['id']); 
 			$this->admin();

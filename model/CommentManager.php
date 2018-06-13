@@ -1,7 +1,6 @@
 <?php
-require_once('ConnectDbase.php');
 
-class CommentManager extends ConnectDbase
+class CommentManager extends Manager
 {	
 	public function postUpdateComment($id, $author, $comment)
 	{

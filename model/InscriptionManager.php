@@ -1,7 +1,6 @@
 <?php
-require_once('ConnectDbase.php');
 
-class InscriptionManager extends ConnectDbase
+class InscriptionManager extends Manager
 {	
 	 public $_bdd =  "";					
 	 public $_pseudo =  "";					
