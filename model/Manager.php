@@ -3,7 +3,7 @@ class Manager
 {
 	protected function dbConnect()
 	{
-		$db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '');
+		$db = new PDO('mysql:host=localhost;dbname=blogp4;charset=UTF8', 'root', '');
 		return $db;
 	}
 }

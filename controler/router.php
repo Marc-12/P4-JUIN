@@ -13,14 +13,6 @@ function initRouteur()
 		'controler' => 'InscriptionControler',
 		'method' => 'memberPage'
 		),	
-		"checkPseudo" => array(
-		'controler' => 'InscriptionControler',
-		'method' => 'checkPseudo'
-		),	
-		"checkMail" => array(
-		'controler' => 'InscriptionControler',
-		'method' => 'checkMail'
-		),	
 		//CONNEXION CONTROLER
 		"connexionPage" => array(
 		'controler' => 'ConnexionControler',
@@ -37,7 +29,6 @@ function initRouteur()
 	    //POST CONTROLER
 		"listPosts" => array(
 		'controler' => 'PostControler',
-		'model' => 'PostManager',
 		'method' => 'listPosts'
 		),
 		"post" => array(

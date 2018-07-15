@@ -1,8 +1,8 @@
-<?php
+<?php 
 session_start();
+// echo session_id();
 include ('AutoLoader.php');
 include ('Router.php');
-
 if (isset($_GET['action']))
 {
 	$arrayParameters = array_merge($_GET, $_POST);
@@ -28,3 +28,4 @@ else
 	$controleur1 = new PostControler();
 	$controleur1->listPosts();
 }
+?>

@@ -16,7 +16,7 @@ class InscriptionManager extends Manager
 	  public function checkPseudo ()
 	  {
 			$db = $this->dbConnect();
-			$connect = $db->prepare('SELECT * FROM membres WHERE pseudo = ?');
+			$connect = $db->prepare('SELECT * FROM users WHERE pseudo = ?');
 			$connect->execute(array($_POST['user']));
 			$data = $connect->fetch(); 
 			if ($data >= 1)
@@ -32,7 +32,7 @@ class InscriptionManager extends Manager
 	  public function checkMail ()
 	  {		
 			$db = $this->dbConnect();
-			$connect = $db->prepare('SELECT * FROM membres WHERE email = ?');
+			$connect = $db->prepare('SELECT * FROM users WHERE email = ?');
 			$connect->execute(array($_POST['mail']));
 			$data = $connect->fetch(); 				
 			if ($data >= 1)
@@ -60,14 +60,16 @@ class InscriptionManager extends Manager
 	  }   
 	  public function checkPseudoSQL ()
 	  {
+		  		$db = $this->dbConnect();
+
 			$db = $this->dbConnect();
-			$connect = $db->prepare('SELECT * FROM membres WHERE pseudo = ?');
+			$connect = $db->prepare('SELECT * FROM users WHERE pseudo = ?');
 			$connect->execute(array($this->_pseudo));
 			$data = $connect->fetch(); 
 			$connect->closeCursor();	
 			if ($data >= 1)
 			{
-				header('Location: view/frontend/inscription.php?check=pseudo');
+				header('Location: index.php?action=memberPage&check=pseudo');	
 				$this->_pseudoBoolean = FALSE; 
 			}
 			else if ($data == 0)
@@ -84,7 +86,7 @@ class InscriptionManager extends Manager
 			else
 			{
 				$this->_passBoolean = FALSE;
-				header('Location: view/frontend/inscription.php?check=pass');
+				header('Location: index.php?action=memberPage&check=pass');	
 			}										
 	  }
 	  public function checkPassWordLenght ()
@@ -97,19 +99,19 @@ class InscriptionManager extends Manager
 			else
 			{
 				$this->_passLenghtBoolean = FALSE; 
-				header('Location: view/frontend/inscription.php?check=passLenght');
+				header('Location: index.php?action=memberPage&check=passLenght');	
 			}
 	  }
 	   public function checkMailSQL ()
 	  {
 			$db = $this->dbConnect();
-			$connect = $db->prepare('SELECT * FROM membres WHERE email = ?');
+			$connect = $db->prepare('SELECT * FROM users WHERE email = ?');
 			$connect->execute(array($_POST['mail']));
 			$data = $connect->fetch(); 
 			$connect->closeCursor();
 			if ($data >= 1)
 			{
-				header('Location: view/frontend/inscription.php?check=email');
+				header('Location: index.php?action=memberPage&check=email');	
 				$this->_mailDatabaseBoolean = FALSE; 
 			}
 			else if ($data == 0)
@@ -125,7 +127,7 @@ class InscriptionManager extends Manager
 			}
 			else
 			{
-				header('Location: view/frontend/inscription.php?check=regex');	
+				header('Location: index.php?action=memberPage&check=regex');	
 				$this->_mailREGEXBoolean = FALSE; 
 			}	
 	  }
@@ -135,30 +137,23 @@ class InscriptionManager extends Manager
 			$sel = $this->_pass.'Zzi8kwW0c';
 			$passHache = sha1($grain.$this->_pass.$sel);	
 			$db = $this->dbConnect();
-			$connect = $db->prepare('INSERT INTO membres (pass, pseudo, email, date_inscription) VALUES(:pass, :pseudo, :email, CURDATE())');
-			$connect->execute(array('pass' => $passHache,'pseudo' => $this->_pseudo,'email' => $this->_mail));
-			$connect->closeCursor();
+			$req = $db->prepare('INSERT INTO users(email, pass, pseudo, admin, date_inscription) VALUES(?, ?, ?, ?, NOW())');
+			$req->execute(array($this->_mail, $passHache, $this->_pseudo, ''));
+			$post = $req->fetch();
+			$req->closeCursor();
+			return $post;
 	  }
 	   public function nextPage()
 	  {
 			if("$this->_passBoolean" == TRUE && "$this->_passLenghtBoolean" == TRUE && "$this->_pseudoBoolean" == TRUE && "$this->_mailDatabaseBoolean" == TRUE && "$this->_mailREGEXBoolean" == TRUE)
 			{
-				echo "<br>next Page !";
 				$this->insertDataSQL();
 				$_SESSION['pseudo'] = $this->_pseudo;						
-				if (isset($_SESSION['redirectionPage']))
-				{
-					$link = $_SESSION['redirectionPage']; 
-					header('Location: '.$link);
-				}
-				else
-				{
-					header('Location:/P4-VERSION5/index.php');
-				}
-			}
+				header('Location: /index.php');
+		    }
 			else
 			{
-				echo "<br>PAS next Page !";
+				echo "<br>Désolé erreur, veuillez contacter l'administrateur du site Web en question.";
 			}
-	  }
+	 }
 }

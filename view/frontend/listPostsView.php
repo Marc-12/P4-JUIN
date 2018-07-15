@@ -1,5 +1,5 @@
 <?php 
-$title = 'Mon blog'; 
+// $title = 'Mon blog'; 
 ob_start(); 
 ?>
 <div class="news">	

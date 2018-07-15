@@ -1,11 +1,11 @@
 <?php ob_start(); ?>	
 		<div id="form">
 			<h1>Inscription à l'espace membre</h1>
-			<form id="" action="/P4-VERSION5/index.php?action=inscriptionPage" method="POST" autocomplete="off">
-				<input placeholder="Pseudo" id="pseudo" class="champ" type="text" value="" name="pseudo" /><img id="pseudo-checked" src="/P4-VERSION5/public/images/assets/checked.png" /><br><br>
-				<input placeholder="Entrez un mot de passe" id="mdp" type="password" value="" name="pass" /><img id="mdp-checked" src="/P4-VERSION5/public/images/assets/checked.png" />
-				<input placeholder="retapez votre mot de passe" id="confirmation" type="password" value="" name="pass2" /><img id="confirmation-checked" src="/P4-VERSION5/public/images/assets/checked.png" /><br><br>
-				<input placeholder="Entrez votre email" id="mail" type="text" value="" name="mail" /><img id="mail-checked" src="/P4-VERSION5/public/images/assets/checked.png" /><br><br>
+			<form id="" action="/index.php?action=inscriptionPage" method="POST" autocomplete="off">
+				<input placeholder="Pseudo" id="pseudo" class="champ" type="text" value="" name="pseudo" /><img id="pseudo-checked" src="/public/images/assets/checked.png" /><br><br>
+				<input placeholder="Entrez un mot de passe" id="mdp" type="password" value="" name="pass" /><img id="mdp-checked" src="/public/images/assets/checked.png" />
+				<input placeholder="retapez votre mot de passe" id="confirmation" type="password" value="" name="pass2" /><img id="confirmation-checked" src="/public/images/assets/checked.png" /><br><br>
+				<input placeholder="Entrez votre email" id="mail" type="text" value="" name="mail" /><img id="mail-checked" src="/public/images/assets/checked.png" /><br><br>
 				<input id="btn-submit" type="submit" value="Valider" /><br>
 				<div id="confirmation-text"></div><div id="confirmation2-text"></div>
 			</form>						

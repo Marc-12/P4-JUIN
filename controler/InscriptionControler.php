@@ -5,12 +5,14 @@ class InscriptionControler
 {
 	public function memberPage ()
 	{
-		header('Location: view/frontend/inscription.php');
+		// header('Location: view/frontend/inscription.php');
+		require('/view/frontend/inscription.php');
+
 	}
 	public function inscriptionPage ()
 	{
 		$inscriptionManager = new InscriptionManager();
-		$inscriptionManager->member();
+		$inscriptionManager->member ();
 	}
 	public function checkPseudo ()
 	{

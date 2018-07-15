@@ -54,7 +54,7 @@ class AdminControler
 	{
 		$imageExtension = str_replace('image/','.',$chemin); 
 		$uniqId = md5(uniqid(rand(), true));
-		$image_url = 'public/images/posts/'.$uniqId.$imageExtension;
+		$image_url = '/public/images/posts/'.$uniqId.$imageExtension;
 		$this->_urlImage = $image_url;
 		function uploadImage($image,$destination,$maxsize=FALSE,$extensions=FALSE,$image_url)
 		{
