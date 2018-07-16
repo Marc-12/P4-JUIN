@@ -1,7 +1,4 @@
 <?php
-// require_once('model/PostManager.php');
-// require_once('model/CommentManager.php');
-// require_once('model/AdminManager.php');
 
 class AdminControler 
 {
@@ -12,7 +9,6 @@ class AdminControler
 	{
 		if(!isset($_SESSION['user']) == "admin")	
 		{
-			// header('Location: index.php');	
 			throw new Exception ('accès interdit');
 		}
 	}
@@ -54,7 +50,7 @@ class AdminControler
 	{
 		$imageExtension = str_replace('image/','.',$chemin); 
 		$uniqId = md5(uniqid(rand(), true));
-		$image_url = '/public/images/posts/'.$uniqId.$imageExtension;
+		$image_url = 'public/images/posts/'.$uniqId.$imageExtension;
 		$this->_urlImage = $image_url;
 		function uploadImage($image,$destination,$maxsize=FALSE,$extensions=FALSE,$image_url)
 		{
@@ -71,7 +67,7 @@ class AdminControler
 		if(!empty($_FILES['image']['type']))
 		{
 			$chemin = $_FILES['image']['type'];
-			$this->photoSql ($chemin);
+			$this->photoSql ($chemin);			
 			$postManager = new PostManager();
 			$posts = $postManager->addPost($this->_urlImage,$arrayParameters['title'],$arrayParameters['content'],$arrayParameters['categories']); 
 			$this->admin();
@@ -89,7 +85,7 @@ class AdminControler
 		if(!empty($_FILES['image']['type']))
 		{
 			$chemin = $_FILES['image']['type'];
-			$this->photoSql ($chemin);			
+			$this->photoSql ($chemin);	
 			$postManager = new PostManager(); 
 			$UpdatedPost = $postManager->updatePost($arrayParameters['title'], $arrayParameters['content'], $arrayParameters['categories'], $this->_urlImage, $arrayParameters['id']); 
 			$this->admin();
