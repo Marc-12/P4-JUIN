@@ -10,7 +10,8 @@ class UserControler
 			}
 		}
 		public function addComment($arrayParameters)
-		{				
+		{	
+			// var_dump ($arrayParameters);
 			$pseudoId = $_SESSION['id'];
 			$commentManager = new CommentManager();
 			$affectedLines = $commentManager->postComment($pseudoId, $arrayParameters['id'], $arrayParameters['author'], $arrayParameters['comment']);
