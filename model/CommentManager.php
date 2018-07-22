@@ -78,7 +78,7 @@ class CommentManager extends Manager
 	}
 	public function acceptComment($id)
 	{
-		$adminComment = TRUE; 
+		$adminComment = 1; 
 		$db = $this->dbConnect();
 		$accept = $db->prepare('UPDATE comments2 SET admin_comment=? WHERE id=?');
 		$acceptComment = $accept->execute(array($adminComment, $id));
@@ -86,7 +86,7 @@ class CommentManager extends Manager
 	}
 	public function refuseComment($id)
 	{
-		$adminComment = FALSE; 
+		$adminComment = 0; 
 		$db = $this->dbConnect();
 		$refuse = $db->prepare('UPDATE comments2 SET admin_comment=? WHERE id=?');
 		$refuseComment = $refuse->execute(array($adminComment, $id));
