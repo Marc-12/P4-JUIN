@@ -6,7 +6,7 @@ class PostControler
 		{							
 			$postManager = new PostManager(); 
 			$posts = $postManager->getPosts(); 	
-			require('/view/frontend/listPostsView.php');								
+			require('view/frontend/listPostsView.php');								
 		}
 		public function post($arrayParameters)
 		{
@@ -14,7 +14,7 @@ class PostControler
 			$commentManager = new CommentManager();
 			$post = $postManager->getPost($arrayParameters['id']);				
 			$comments = $commentManager->getComments($arrayParameters['id']);
-			require('/view/frontend/postView.php');	
+			require('view/frontend/postView.php');	
 		}
 		public function commentOpinion($arrayParameters)
 		{
@@ -38,7 +38,7 @@ class PostControler
 			}
 			else
 			{
-				header('Location: /index.php');
+				header('Location: index.php');
 			}
 		}
 		

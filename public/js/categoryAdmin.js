@@ -16,7 +16,7 @@ var categoryAdmin =
 		$.ajax(
 		{	
 			type: "GET",
-			url: "/index.php?action=adminReadCategory",
+			url: "index.php?action=adminReadCategory",
 			success: function(data)
 			{
 				that.categoryContent = data;
@@ -61,7 +61,7 @@ var categoryAdmin =
 		$.ajax(
 		{
 			type: "GET",
-			url: "/index.php?action=adminAddCategory",
+			url: "index.php?action=adminAddCategory",
 			data: {categoryName: inputContent},
 			success: function()
 			{
@@ -78,7 +78,7 @@ var categoryAdmin =
 		$.ajax(
 		{
 			type: "GET",
-			url: "/index.php?action=adminDeleteCategory",
+			url: "index.php?action=adminDeleteCategory",
 			data: {categoryName: contentDelete},
 			success: function()
 			{

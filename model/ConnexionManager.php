@@ -15,7 +15,7 @@ class ConnexionManager extends Manager
 		 $resultat = $connect->fetch(); 
 		 if (!$resultat)
 		 {
-				require('/view/frontend/connexion.php');
+				require('view/frontend/connexion.php');
 		 }
 		 else
 		 {	
@@ -25,7 +25,7 @@ class ConnexionManager extends Manager
 			{
 				$_SESSION['user'] = "admin";							
 			}				
-			header('Location: /index.php');
+			header('Location: index.php');
 		 }
 	}
 }

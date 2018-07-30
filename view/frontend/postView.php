@@ -13,7 +13,7 @@
 			if (isset($_SESSION['pseudo']))
 			{
 				echo ' Vous pouvez écrire, modifier ou supprimer un commentaire en tant que: "'.$_SESSION['pseudo'].'" :';
-				echo '<form class="formComment" action="/index.php?action=addComment&amp;id='.$post['id'].'" method="post">
+				echo '<form class="formComment" action="index.php?action=addComment&amp;id='.$post['id'].'" method="post">
 						<div>
 							<label for="author">Auteur</label><br />
 							<input type="text" id="author" name="author" placeholder="'.$_SESSION['pseudo'].'"/>
@@ -30,7 +30,7 @@
 			else
 			{
 					$_SESSION['redirectionPage'] = $_SERVER['REQUEST_URI']; 
-					echo '<br><a href="index.php?action=connectPage">Connectez-vous pour laisser un commentaire </a><a href="/index.php?action=memberPage"> --- S\'inscrire</a><br><hr>';
+					echo '<br><a href="index.php?action=connectPage">Connectez-vous pour laisser un commentaire </a><a href="index.php?action=memberPage"> --- S\'inscrire</a><br><hr>';
 			}
 		?>							
 
@@ -53,9 +53,9 @@
 					}
 				}
 				$_SESSION['redirectionPage'] = $_SERVER['REQUEST_URI']; 
-				echo '<div class="buttonLikeDiv"><a class="" href="index.php?action=commentOpinion&amp;opinion=like&amp;id='.$comment['id'].'"><img src="/public/images/assets/like.png" class="pngImages" alt="" ></a>'.$comment['likes'].'</div>';
-				echo '<div class="buttonLikeDiv"><a class="" href="index.php?action=commentOpinion&amp;opinion=dislike&amp;id='.$comment['id'].'"><img src="/public/images/assets/dislike.png" class="pngImages" alt="" ></a>'.$comment['dislike'].'</div>';
-				echo '<div class="buttonLikeDiv"><a class="" href="index.php?action=commentOpinion&amp;opinion=redFlag&amp;id='.$comment['id'].'"><img src="/public/images/assets/redflag.png" class="pngImages" alt="" ></a>'.$comment['redFlag'].'</div>';
+				echo '<div class="buttonLikeDiv"><a class="" href="index.php?action=commentOpinion&amp;opinion=like&amp;id='.$comment['id'].'"><img src="public/images/assets/like.png" class="pngImages" alt="" ></a>'.$comment['likes'].'</div>';
+				echo '<div class="buttonLikeDiv"><a class="" href="index.php?action=commentOpinion&amp;opinion=dislike&amp;id='.$comment['id'].'"><img src="public/images/assets/dislike.png" class="pngImages" alt="" ></a>'.$comment['dislike'].'</div>';
+				echo '<div class="buttonLikeDiv"><a class="" href="index.php?action=commentOpinion&amp;opinion=redFlag&amp;id='.$comment['id'].'"><img src="public/images/assets/redflag.png" class="pngImages" alt="" ></a>'.$comment['redFlag'].'</div>';
 		?>	
 			<br><br><p class="commentComment"><i>"<?= nl2br(htmlspecialchars($comment['comment'])) ?>"</i></p><br>
  <?php }

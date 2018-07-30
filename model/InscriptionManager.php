@@ -149,7 +149,7 @@ class InscriptionManager extends Manager
 			{
 				$this->insertDataSQL();
 				$_SESSION['pseudo'] = $this->_pseudo;						
-				header('Location: /index.php');
+				header('Location: index.php');
 		    }
 			else
 			{

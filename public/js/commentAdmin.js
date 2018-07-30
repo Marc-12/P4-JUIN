@@ -14,7 +14,7 @@ var commentAdmin =
 				jQuery.ajax(
 				{
 					type : "POST",
-					url : "/index.php?action=commentOpinion?opinion=like?id=+id+",
+					url : "index.php?action=commentOpinion?opinion=like?id=+id+",
 					success : function()
 					{
 						//alert('success');

@@ -24,7 +24,7 @@ ob_start();
 	console.log(URL);
 	$.ajax(
 	{
-	   url: "/P4-VERSION5/index.php?action=getCommentToModify",
+	   url: "index.php?action=getCommentToModify",
 	   type: "GET",
 	   data: { id: URL},
 	   dataType: 'text',

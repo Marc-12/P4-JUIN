@@ -43,7 +43,7 @@ var FormValidator =
 			$.ajax(
 			{
 				type: "POST",
-				url: "/index.php?action=checkPseudo",
+				url: "index.php?action=checkPseudo",
 				data: {'user' : value},
 				dataType: "text",
 				success: function(data)
@@ -73,7 +73,7 @@ var FormValidator =
 			$.ajax(
 			{
 				type: "POST",
-				url: "/index.php?action=checkMail",
+				url: "index.php?action=checkMail",
 				data: {'mail' : value},
 				dataType: "text",
 				success: function(data)

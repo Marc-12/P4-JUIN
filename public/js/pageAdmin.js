@@ -51,7 +51,7 @@ var pageAdmin =
 				$.ajax(
 				{
 					type: "POST",
-					url: "/index.php?action=adminUpdatingPostData",
+					url: "index.php?action=adminUpdatingPostData",
 					data: {id: URL},
 					dataType: "text",
 					success: function(data)
@@ -61,7 +61,7 @@ var pageAdmin =
 						 tinyMCE.activeEditor.setContent(parsedJson.content);
 					}
 				});
-				$(".adminUpdatePost").attr("action","/index.php?action=adminUpdatePost&id="+URL+"");
+				$(".adminUpdatePost").attr("action","index.php?action=adminUpdatePost&id="+URL+"");
 				$(".DivUpdatePost").show();
 				$(".DivUpdatePost").css({"border": "solid re","padding": "1%", "marginTop": "10px","background-color":"#b3d1ff",
 					"width": "100%","opacity":"0.8","marginBottom": "15px","marginTop": "15px"});	

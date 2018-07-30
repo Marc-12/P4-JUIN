@@ -18,9 +18,7 @@ class ConnexionControler
 	}
 	public function connectPage ()
 	{
-		// header('Location: /view/frontend/connexion.php');
-		// header('Location: /connexion.php');
-		require('/view/frontend/connexion.php');
+		require('view/frontend/connexion.php');
 	}
 	public function connexionPage ($arrayParameters)
 	{
