@@ -133,10 +133,7 @@ class InscriptionManager extends Manager
 	  }
 	  public function insertDataSQL ()
 	  {
-			// $grain = 'F89gK132b2'.$this->_pseudo;
-			// $sel = $this->_pass.'Zzi8kwW0c';
-			// $passHache = sha1($grain.$this->_pass.$sel);	
-			
+
 			$passHache = password_hash($this->_pass, PASSWORD_DEFAULT);	
 			
 			$db = $this->dbConnect();

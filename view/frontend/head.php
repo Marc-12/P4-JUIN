@@ -12,5 +12,5 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<link href="public/css/clean-blog.min.css" rel="stylesheet">
 	<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=pg2rdp7vsj4dapk1pbucvx8sgzaqt0nq4g56d71zya5l479c"></script>	
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>	
 </head>
